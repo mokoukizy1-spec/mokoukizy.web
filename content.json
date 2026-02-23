@@ -1,0 +1,144 @@
+{
+  "texts": {
+    "header_line1": "全端工程師",
+    "header_line2": "遊戲工作室",
+    "header_line3": "資安工程師",
+    "header_desc": "專注網站復刻、伺服器配置、滲透測試、記憶體分析與 AI 自動化。以合法與道德為前提，提供專業安全諮詢與技術解決方案。",
+    "service_1_title": "完美復刻網站架設",
+    "service_1_desc": "精準還原設計稿與互動，包含背景與響應式，提供穩定部署與最佳化。",
+    "service_2_title": "伺服器連接埠開啟技術",
+    "service_2_desc": "設定防火牆與連接埠轉發，強化安全性與可達性，提供可視化檢核流程。",
+    "service_3_title": "遊戲記憶體修改",
+    "service_3_desc": "分析結構、定位偏移與寫入策略，實作穩定模組化工具，兼顧安全風險評估。",
+    "service_4_title": "AI 腳本設計",
+    "service_4_desc": "以自動化腳本與模型結合流程，支援監控、資料處理與互動控制。",
+    "works_web_title": "網頁復刻 · 作品展示",
+    "works_games_title": "小品遊戲",
+    "image_section_title": "伺服器端及遊戲修改 · 圖片展示",
+    "footer_copyright": "© 2024 YU_STUDIO.SYS"
+  },
+  "popups": {
+    "web_instagram": {
+      "title": "Instagram 復刻作品",
+      "content": "這是一個完美還原 Instagram UI 的全疊代項目，包含流式佈局與動態交互。",
+      "link": "",
+      "autoRedirect": false
+    },
+    "web_iphone17": {
+      "title": "iPhone 17 預約頁面",
+      "content": "模擬原廠直營店的網頁設計，具有極致的轉場特效與高響應式結構。",
+      "link": "https://rad-douhua-61c8ca.netlify.app/",
+      "autoRedirect": true
+    },
+    "web_line_login": {
+      "title": "LINE 登入復刻",
+      "content": "安全性滲透測試專用的前端登入頁面模擬。",
+      "link": "https://comfy-alfajores-b9058c.netlify.app/",
+      "autoRedirect": true
+    },
+    "game_russian_roulette": {
+      "title": "YU 的俄羅斯輪盤",
+      "content": "小品遊戲示範項目。",
+      "link": "https://classy-crepe-4893b6.netlify.app/",
+      "autoRedirect": true
+    },
+    "game_password": {
+      "title": "終極密碼 · YU 創作",
+      "content": "小品遊戲示範項目。",
+      "link": "https://jazzy-selkie-677ab4.netlify.app/ultimate.html",
+      "autoRedirect": true
+    },
+    "game_barrage": {
+      "title": "楓之谷風格彈幕躲避",
+      "content": "小品遊戲示範項目。",
+      "link": "https://cerulean-toffee-b5acb5.netlify.app/",
+      "autoRedirect": true
+    },
+    "game_drink_roulette": {
+      "title": "暗黑風輪盤喝酒",
+      "content": "小品遊戲示範項目。",
+      "link": "https://warm-puppy-9155e4.netlify.app/",
+      "autoRedirect": true
+    }
+  },
+  "images": [
+    {
+      "id": "sample-1",
+      "title": "Game Engine Analysis",
+      "url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800",
+      "thumb": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400"
+    },
+    {
+      "id": "sample-2",
+      "title": "Memory Modding",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+      "thumb": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400"
+    },
+    {
+      "id": "sample-3",
+      "title": "Server Infrastructure",
+      "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?w=800",
+      "thumb": "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?w=400"
+    },
+    {
+      "id": "1771819643568",
+      "title": "AI自動化練等",
+      "url": "/uploads/1771819643560_5.png",
+      "thumb": "/uploads/1771819643560_5.png"
+    },
+    {
+      "id": "1771819671494",
+      "title": "DDOS",
+      "url": "/uploads/1771819671491_i3mage.png",
+      "thumb": "/uploads/1771819671491_i3mage.png"
+    },
+    {
+      "id": "1771819696680",
+      "title": "員工監聽系統",
+      "url": "/uploads/1771819696674_im2age.png",
+      "thumb": "/uploads/1771819696674_im2age.png"
+    },
+    {
+      "id": "1771819716083",
+      "title": "滲透監控",
+      "url": "/uploads/1771819716081_i4mage.png",
+      "thumb": "/uploads/1771819716081_i4mage.png"
+    },
+    {
+      "id": "1771819726052",
+      "title": "AI腳本設定",
+      "url": "/uploads/1771819726049_image.png",
+      "thumb": "/uploads/1771819726049_image.png"
+    },
+    {
+      "id": "1771819732403",
+      "title": "外掛修改",
+      "url": "/uploads/1771819732396_memory-mod-1.png",
+      "thumb": "/uploads/1771819732396_memory-mod-1.png"
+    },
+    {
+      "id": "1771819734694",
+      "title": "外掛修改",
+      "url": "/uploads/1771819734690_memory-mod-1.png",
+      "thumb": "/uploads/1771819734690_memory-mod-1.png"
+    },
+    {
+      "id": "1771819735926",
+      "title": "外掛修改",
+      "url": "/uploads/1771819735921_memory-mod-1.png",
+      "thumb": "/uploads/1771819735921_memory-mod-1.png"
+    },
+    {
+      "id": "1771821226033",
+      "title": "1",
+      "url": "/uploads/1771821226029_memory-mod-1.png",
+      "thumb": "/uploads/1771821226029_memory-mod-1.png"
+    },
+    {
+      "id": "1771823058833",
+      "title": "1",
+      "url": "/uploads/1771823058827_memory-mod-1.png",
+      "thumb": "/uploads/1771823058827_memory-mod-1.png"
+    }
+  ]
+}

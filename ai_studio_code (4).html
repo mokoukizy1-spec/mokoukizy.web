@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YU Studio | 全端工程師 | 遊戲工作室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --matrix-green: #00ff41; --cyber-blue: #00d1ff; }
+        body { background-color: #0b0e14; font-family: 'Noto Sans TC', sans-serif; color: #fff; overflow-x: hidden; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        #matrix-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.4; pointer-events: none; }
+        .content-overlay { position: relative; z-index: 10; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; transition: all 0.3s ease; }
+        .glass-card:hover { border-color: var(--matrix-green); box-shadow: 0 0 20px rgba(0, 255, 65, 0.15); transform: translateY(-5px); }
+        .text-glow { text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
+        .btn-link { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 0.75rem; display: block; width: 100%; text-align: left; transition: all 0.2s; }
+        .btn-link:hover { background: rgba(0, 255, 65, 0.1); border-color: var(--matrix-green); padding-left: 1.5rem; }
+        
+        /* Modal Style */
+        .modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 20px; }
+        .modal.active { display: flex; }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="content-overlay max-w-4xl mx-auto px-6 py-12">
+        
+        <!-- Header Section (截圖 4 內容) -->
+        <header class="mb-16 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
+                <span data-key="header_line1">全端工程師</span> <span class="text-gray-500 font-light">|</span> <br>
+                <span data-key="header_line2">遊戲工作室</span> <span class="text-gray-500 font-light">|</span> <br>
+                <span data-key="header_line3">網路安全專家</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed" data-key="header_desc">
+                專注網站復刻、伺服器配置、滲透測試、記憶體分析與 AI 自動化。以合法與道德為前提，提供專業安全諮詢與技術解決方案。
+            </p>
+        </header>
+
+        <!-- 核心服務 (截圖 3 內容) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div class="glass-card p-6">
+                <h3 class="text-xl font-bold mb-3 text-white" data-key="service_1_title">完美復刻網站架設</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="service_1_desc">精準還原設計稿與互動，包含背景與響應式，提供穩定部署與最佳化。</p>
+            </div>
+            <div class="glass-card p-6">
+                <h3 class="text-xl font-bold mb-3 text-white" data-key="service_2_title">伺服器連接埠開啟技術</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="service_2_desc">設定防火牆與連接埠轉發，強化安全性與可達性，提供可視化檢核流程。</p>
+            </div>
+            <div class="glass-card p-6">
+                <h3 class="text-xl font-bold mb-3 text-white" data-key="service_3_title">遊戲記憶體修改</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="service_3_desc">分析結構、定位偏移與寫入策略，實作穩定模組化工具，兼顧安全風險評估。</p>
+            </div>
+            <div class="glass-card p-6">
+                <h3 class="text-xl font-bold mb-3 text-white" data-key="service_4_title">AI 腳本設計</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="service_4_desc">以自動化腳本與模型結合流程，支援監控、資料處理與互動控制。</p>
+            </div>
+        </section>
+
+        <!-- 作品展示區 (截圖 2 內容) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <!-- 網頁復刻 -->
+            <section>
+                <h2 class="text-cyan-400 font-bold mb-6 flex items-center" data-key="works_web_title">
+                    <span class="mr-2">●</span> 網頁復刻 · 作品展示
+                </h2>
+                <div class="space-y-3">
+                    <button class="btn-link" onclick="openPopup('web_instagram')">Instagram</button>
+                    <button class="btn-link" onclick="openPopup('web_iphone17')">iPhone 17 256g（原廠直營）</button>
+                    <button class="btn-link" onclick="openPopup('web_line_login')">LINE 登入</button>
+                </div>
+            </section>
+
+            <!-- 小品遊戲 -->
+            <section>
+                <h2 class="text-cyan-400 font-bold mb-6 flex items-center" data-key="works_games_title">
+                    <span class="mr-2">●</span> 小品遊戲
+                </h2>
+                <div class="space-y-3">
+                    <button class="btn-link" onclick="openPopup('game_russian_roulette')">YU 的俄羅斯輪盤</button>
+                    <button class="btn-link" onclick="openPopup('game_password')">終極密碼 · YU 創作</button>
+                    <button class="btn-link" onclick="openPopup('game_barrage')">楓之谷風格彈幕躲避</button>
+                    <button class="btn-link" onclick="openPopup('game_drink_roulette')">暗黑風輪盤喝酒</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- 圖片展示區 (截圖 1 內容) -->
+        <section class="mb-16">
+            <h2 class="text-cyan-400 font-bold mb-8" data-key="image_section_title">伺服器端及遊戲修改 · 圖片展示</h2>
+            <div id="imageGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+            <p class="text-gray-600 text-[10px] mt-4 text-right italic">＊ 部分敏感內容已進行脫敏處理</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-800 pt-8 flex justify-between items-center text-gray-500 text-sm">
+            <div class="mono">© 2024 YU_STUDIO.SYS</div>
+            <div class="flex space-x-4">
+                <span class="text-green-500">STABLE</span>
+                <span class="animate-pulse">_</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 彈出式視窗 (Modal) -->
+    <div id="infoModal" class="modal" onclick="closeModal()">
+        <div class="bg-slate-900 border border-green-500 p-8 rounded-2xl max-w-lg w-full relative" onclick="event.stopPropagation()">
+            <h2 id="modalTitle" class="text-2xl font-bold text-green-500 mb-4"></h2>
+            <p id="modalContent" class="text-gray-300 leading-relaxed mb-6"></p>
+            <div id="modalImageContainer" class="mb-6 hidden">
+                <img id="modalImage" src="" class="w-full rounded-lg border border-gray-700">
+            </div>
+            <div id="modalLinkContainer" class="mb-4 hidden">
+                <a id="modalLinkButton" href="#" target="_blank" class="w-full inline-block text-center py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition">前往連結</a>
+            </div>
+            <button onclick="closeModal()" class="w-full py-3 bg-green-600 text-black font-bold rounded-lg hover:bg-green-400 transition">關閉視窗</button>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Background
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZｦｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄ';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(11, 14, 20, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 35);
+
+        // Modal Logic
+        const modal = document.getElementById('infoModal');
+        const mTitle = document.getElementById('modalTitle');
+        const mContent = document.getElementById('modalContent');
+        const mImgContainer = document.getElementById('modalImageContainer');
+        const mImg = document.getElementById('modalImage');
+        const mLinkContainer = document.getElementById('modalLinkContainer');
+        const mLinkBtn = document.getElementById('modalLinkButton');
+        let contentData = null;
+
+        function openModal(title, content, link) {
+            mTitle.innerText = title;
+            mContent.innerText = content;
+            mImgContainer.classList.add('hidden');
+            if (link) {
+                mLinkBtn.href = link;
+                mLinkContainer.classList.remove('hidden');
+            } else {
+                mLinkContainer.classList.add('hidden');
+            }
+            modal.classList.add('active');
+        }
+
+        function openImageModal(imgSrc) {
+            mTitle.innerText = "內容詳情展示";
+            mContent.innerText = "展示關於伺服器配置或遊戲內存修改的實機截圖。";
+            mImg.src = imgSrc;
+            mImgContainer.classList.remove('hidden');
+            mLinkContainer.classList.add('hidden');
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        async function loadContent() {
+            try {
+                const resp = await fetch('/api/content');
+                contentData = await resp.json();
+                applyTexts();
+                renderDynamicImages();
+            } catch (e) {}
+        }
+
+        function applyTexts() {
+            if (!contentData || !contentData.texts) return;
+            const texts = contentData.texts;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (texts[key] !== undefined) {
+                    el.innerText = texts[key];
+                }
+            });
+            const footer = document.querySelector('footer .mono');
+            if (footer && texts.footer_copyright) {
+                footer.innerText = texts.footer_copyright;
+            }
+        }
+
+        async function renderDynamicImages() {
+            const grid = document.getElementById('imageGrid');
+            grid.innerHTML = '';
+            let images = [];
+            try {
+                const r = await fetch('/api/works/images-list');
+                images = await r.json();
+            } catch {}
+            if ((!images || images.length === 0) && contentData && Array.isArray(contentData.images)) {
+                images = contentData.images;
+            }
+            images.forEach(img => {
+                const card = document.createElement('div');
+                card.className = 'glass-card overflow-hidden cursor-pointer';
+                card.onclick = () => openImageModal(img.url);
+                const image = document.createElement('img');
+                image.src = img.thumb || img.url;
+                image.className = 'w-full h-32 object-cover opacity-70 hover:opacity-100 transition';
+                const caption = document.createElement('div');
+                caption.className = 'p-2 text-[10px] text-gray-500 text-center uppercase';
+                caption.innerText = img.title || '';
+                card.appendChild(image);
+                card.appendChild(caption);
+                grid.appendChild(card);
+            });
+        }
+
+        function openPopup(key) {
+            if (!contentData || !contentData.popups) {
+                return;
+            }
+            const item = contentData.popups[key];
+            if (!item) return;
+            if (item.autoRedirect && item.link) {
+                window.location.href = item.link;
+                return;
+            }
+            openModal(item.title || '', item.content || '', item.link || '');
+        }
+
+        loadContent();
+    </script>
+</body>
+</html>
